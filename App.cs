@@ -12,7 +12,7 @@ namespace Spac3Game
             
         public App()
         {
-            planets = new Planets("Earth","","")
+            planets = new Planets("Earth", "", "");
 
         }
 
