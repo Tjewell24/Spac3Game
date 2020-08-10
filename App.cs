@@ -7,8 +7,12 @@ namespace Spac3Game
 
     public class App
     {
+        Planets planets;
+
+            
         public App()
         {
+            planets = new Planets("Earth","","")
 
         }
 
@@ -48,9 +52,10 @@ namespace Spac3Game
             switch (key)
             {
                 case ConsoleKey.Q:
-
-            }
-            return true;
+                    return true;
+            } return false;
+            
+            
 
         }
 

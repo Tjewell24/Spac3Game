@@ -1,95 +1,114 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Text;
+﻿using System;
 
-/*
-The story so far...
-You are {playerName}.  Your dad is the multigajillion credit air of the Intergallatic spaceWeapons department where spaceWar is the business, and business
-is good.  You have just graduated from spaceHarvardWarCollege and was set to inherit the company...But you never were the type to do as you were told.
-Even finishing spaceCollege was a stretchGoal.  Moral ambiguity aside, you decide to take your life savings from odd jobs completed while at spaceCollege
-and set out to carve out your own "Space" in space. You skipped out on your spaceGraduation to avoid your father. So, with 1000 spaceCredits, a full tank of 
-spaceGas, a halfPack of ciggs, its dark and you're wearing sunglasses, you hop into your beatup spacePinto and set out on your adventure.
-
-2. The quickest (and sometimes dangerous) way to fortune is through the spaceTrades.  Goods, products, and services.  If it's in the shop, you can buy,
-trade, or steal.  The path you choose is dependant on what you trade.  Or you could just drop everything change your mind and decide to work for your father.
-Your choice. 
-
-3. So, do you want to work for your dad, or do you want to set out on your spaceAdventure!.
-1 work for dad
-2 continue
-Choice 1 = Console.WriteLine($"You work for your dad, make millions but feel hollow and empty inside.  Game over.");
-Choice 2 = Console.WriteLine($"Wise choice.  {playerName}, LET THE ADVENTURE BEGIN!!");
-
-class/enums:  Planets(Star) w/ Distance from Earth
-Earth(Earth's Sun), Proximab (Proxima Centauri) 4.2, AlphaCentuariB (AlphaCentuari) 4.367, Titan (AlphaCentuari) 4.367, Arad (BernardStar) 5.978
-Player - Console.ReadLine($"Enter Player Name: {playerName}");
-currency - spaceCredits
-ships -  Pinto  Pontiac  Lincon  Shelby  Tesla
-wallet = spaceCreditsAvailable
-itemForSale - Product1 Product2 weapons rations spaceGas Food Ships Moon(retirementEnding) 
-purchasePrice Sale price for each item
-actions on selection - buyItem(dowhile check wallet)
-
-Stretch goals - Map for sale required to travel to certain planets, multiple jobs, change jobs, additional endings, hire on other crew members
-negotiate price(success based on exp/lvl), adjustable cargo holds based on ships storage(ie how much cargo can each ship hold per trip), additinal spaceGas 
-units cost based on current load. Races to choose from(ie Terran, Alien etc each with bonus attributed to race which will translate to skills). Skills 
-which translate to success in negotations and stealing. Weapons for ship =  new rabbit hole.  Shoot at cops to escape. Random bool t/f
-
-
-
-possible 2nd string prompt = "Choose 1 press the 'A' key, Choose 2 press the 'B' key. To quit, press 'Q'."
-private bool HandleUserInput(ConsoleKey)
+namespace Spac3Game
 {
-var key = GetInputFromUser();
+    public static class Story
+    {
+        public static string PlayerOne { get; private set; }
 
-switch (key)
-{
-case ConsoleKey.A:
- Console.WriteLine($"You work for your dad, make millins of spaceCredits.\nYour wallet is fat but feel hollow and empty inside. Game Over.); 
- break;
-case ConsoleKey.B 
- Console.WriteLine($"Wise choice 'playerName', LET THE ADVENTURE BEGIN!!"); 
- break;
-case ConsoleKey.Q:
- return true; 
-need to figure out how to link this "return true" to quit. maybe something like:
-private void PrintUsageOptions()
-{
-if (tasks.Any())
-{
-Console.WriteLine("a: add | d: delete | n: next page | \u2193: select | enter: action | q: quit");
-}
+        public static void Intro()
+        {
+            string prompt = "Press any key continue...";
 
-Console.Write("Input: ");
-}
-}
+            string playerOne;
+            //int spaceCredits = 1000;
+            Console.WriteLine("What do I call you spaceCowboy?");
+            playerOne = Console.ReadLine();
 
-return false;
-}
+            Console.Clear();
+            Console.WriteLine($"The story so far...\nIn the year 23xx, You are {PlayerOne}. Your dad is the multigajillion-spaceCredit-air of the\nIntergallatic spaceWeapons department where spaceWar is the business, and business is good. You have just graduated from\nspaceHarvardWarCollege and was set to inherit the company...\nBut {PlayerOne} was never the type to do as you were told. Even finishing spaceCollege was a stretchGoal.\nMoral ambiguity aside, {PlayerOne} decides to take your life savings from odd jobs completed while at spaceCollege and set out to carve out your own \"Space\" in space. {PlayerOne} skipped out on your spaceGraduation to avoid your father.\nSo, with 1000 spaceCredits, a full tank of spaceGas, a halfPack of cigarettes, its dark and you're wearing sunglasses\nyou hop into your beatup spacePinto and set\nout to begin your adventure.");
 
-static void Main(string[] args)
-{
-    bool showMenu = true;
-    while (showMenu)
-   {
-        showMenu = MainMenu();
-   }
-}
- {
-                var key = GetInputFromUser();
-           
-                switch (key)
+            UI.UserInput(prompt);
+
+            Console.Clear();
+            Console.WriteLine($"The quickest (and sometimes dangerous) way to fortune is through the spaceTrades. Goods, products, and services.\nIf it's in the spaceShop you can buy, sell, trade, or steal. The path you choose is dependant on what you trade.\nOr you could just drop everything change your mind and decide to work for your father. Your choice.");
+            UI.UserInput(prompt);
+
+            Console.WriteLine($"So, {PlayerOne}, do you want to work for \"dear 'ol dad\", or do you want to set out on your spaceAdventure!\nPress 1 Work for dad!\nPress 22 I do What I Want!");
+            Console.WriteLine($"Choose your destiny! Press 1, or Press 22");
+            ChooseYourAdventure();
+            UI.UserInput(prompt);
+
+            Console.Clear();
+            Console.WriteLine($"Choice 1 = You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow and empty inside. Game over.");
+            UI.UserInput(prompt);
+
+            Console.Clear();
+            Console.WriteLine($"Choice 2 = Wise choice 'playerName', LET THE ADVENTURE BEGIN!!");
+            UI.UserInput(prompt);
+
+
+
+            //Console.Clear();
+            //Console.WriteLine($"Choice 1 = You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow /and /empty inside. Game over.");
+            //UI.UserInput(prompt);
+            //
+            //Console.Clear();
+            //Console.WriteLine($"Choice 2 = Wise choice 'playerOne', Lets roll!");
+            //UI.UserInput(prompt);
+
+
+        }
+        //Figure out how to user input choices          
+        private static void ChooseYourAdventure()
+        {
+            ConsoleKey choice, choice2;
+            do
+            {
+                choice = Console.ReadKey(true).Key;
+
+                switch (choice)
                 {
-                    case ConsoleKey.A:
-                        Console.Write($"You work for your dad, make millins of spaceCredits.\nYour wallet is fat but feel hollow and empty inside. Game Over.); 
+                    // End the game here
+                    case ConsoleKey.D1:
+                        Console.WriteLine("You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow and empty inside. Game over.");
+                        Console.WriteLine();
+                        Console.WriteLine($"{PlayerOne} Do you want to try again?\nPress 3 for \"Yes\"\nPress 1 for \"No\"");
+                        Console.WriteLine();
+                        //need to loop back after this.
                         break;
-                    case ConsoleKey.B
-                 Console.Write($"Wise choice 'playerName', LET THE ADVENTURE BEGIN!!");
-                        break;
-                    case ConsoleKey.Q:
-                        return true;
                 }
-           
-                return false;
             }
-*/
+            while (choice != ConsoleKey.D1 && choice != ConsoleKey.D2);
+            do
+            {
+                choice2 = Console.ReadKey(true).Key;
+
+                switch (choice2)
+
+                {
+                    case ConsoleKey.D3:
+                        Console.WriteLine($"Ok {PlayerOne}, lets try this again.");
+                        Console.WriteLine();
+                        Console.WriteLine($"So, {PlayerOne}, do you want to work for \"dear 'ol dad\", or do you want to set out on your spaceAdventure!\nPress 1 Work for dad!\nPress 22 I do What I Want!");
+                        ChooseYourAdventure();
+                        break;
+
+                    case ConsoleKey.D2:
+                        Console.WriteLine($"Wise choice {PlayerOne}', Lets roll!");
+                        break;
+                        // Continue the game here with more Blue's Brothers parady
+                }
+            }
+            while (choice != ConsoleKey.D1 && choice != ConsoleKey.D2 && choice2 != ConsoleKey.D3);
+        }
+    }
+
+}
+//{
+//    Console.WriteLine($"{PlayerOne} Do you want to try again?\n Press 3 for \"Yes\", press 1 for \"No\".");
+//    ConsoleKey choice2;
+//    do
+//    {
+//        choice2 = Console.ReadKey(true).Key;
+//        switch (choice2)
+//        {
+//            case ConsoleKey.D3:
+//                Console.WriteLine($"Ok {PlayerOne}, I'll ask again");
+//                break;
+//        }
+//    } while (choice != ConsoleKey.D1 && choice != ConsoleKey.D2 && choice2 != ConsoleKey.D3);
+//
+//}
+//while (choice != ConsoleKey.D3 && choice != ConsoleKey.D2) ;
+
