@@ -16,7 +16,7 @@ namespace Spac3Game
             PlayerOne = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine($"The story so far...\nIn the year 23xx, You are {PlayerOne}. Your dad is the multigajillion-spaceCredit-air of the\nIntergallatic spaceWeapons department where spaceWar is the business, and business is good. You have just graduated from\nspaceHarvardWarCollege and was set to inherit the company...\nBut {PlayerOne} was never the type to do as you were told. Even finishing spaceCollege was a stretchGoal.\nMoral ambiguity aside, {PlayerOne} decides to take your life savings from odd jobs completed while at spaceCollege and set out to carve out your own \"Space\" in space. {PlayerOne} skipped out on your spaceGraduation to avoid your father.\nSo, with 1000 spaceCredits, a full tank of spaceGas, a halfPack of cigarettes, its dark and you're wearing sunglasses\nyou hop into your beatup spacePinto and set\nout to begin your adventure.");
+            Console.WriteLine($"The story so far...\nIn the year 23xx, You are {PlayerOne}. Your dad is the multigajillion-spaceCredit-air of the\nIntergallatic spaceWeapons department where spaceWar is the business, and business is good. You have just graduated from\nspaceHarvardWarCollege and was set to inherit the company...\nBut {PlayerOne} was never the type to do as you were told. Even finishing spaceCollege was a stretchGoal.\nMoral ambiguity aside, {PlayerOne} decides to take your life savings from odd jobs completed while at spaceCollege and set out to carve out your own \"Space\" in space. {PlayerOne} skipped out on your spaceGraduation to avoid your father.\nSo, with 1000 spaceCredits, a full tank of spaceGas, a halfPack of cigarettes, its dark and you're wearing sunglasses,\nyou hop into your beatup spacePinto and set out to begin your adventure.");
             UI.UserInput(prompt);
 
             Console.Clear();
@@ -43,7 +43,7 @@ namespace Spac3Game
                     case ConsoleKey.D1:
                         Console.WriteLine("You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow and empty inside. Game over.");
                         Console.WriteLine();
-                        Console.WriteLine($"{PlayerOne} Do you want to try again?\nPress 3 for \"Yes\"\nPress 1 for \"No\"");
+                        Console.WriteLine($"{PlayerOne}Do you want to try again?\nPress 3 for \"Yes\"\nPress 1 for \"No\"");
                         Console.WriteLine();
                         //need to loop back after this.
                         break;
