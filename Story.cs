@@ -24,19 +24,21 @@ namespace Spac3Game
             Console.WriteLine($"The quickest (and sometimes dangerous) way to fortune is through the spaceTrades. Goods, products, and services.\nIf it's in the spaceShop you can buy, sell, trade, or steal. The path you choose is dependant on what you trade.\nOr you could just drop everything change your mind and decide to work for your father. Your choice.");
             UI.UserInput(prompt);
 
+            Console.Clear();
             Console.WriteLine($"So, {PlayerOne}, do you want to work for \"dear 'ol dad\", or do you want to set out on your spaceAdventure!\nPress 1 Work for dad!\nPress 22 I do What I Want!");
             Console.WriteLine($"Choose your destiny! Press 1, or Press 22");
             ChooseYourAdventure();
-            UI.UserInput(prompt);
+            
+           /*UI.UserInput(prompt);
 
-            Console.Clear();
-            Console.WriteLine($"Choice 1 = You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow and empty inside. Game over.");
-            UI.UserInput(prompt);
-
-            Console.Clear();
-            Console.WriteLine($"Choice 2 = Wise choice 'playerName', LET THE ADVENTURE BEGIN!!");
-            UI.UserInput(prompt);
-
+           Console.Clear();
+           Console.WriteLine($"Choice 1 = You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow anempty inside. Game over.");
+           UI.UserInput(prompt);
+           
+           Console.Clear();
+           Console.WriteLine($"Choice 2 = Wise choice 'playerName', LET THE ADVENTURE BEGIN!!");
+           UI.UserInput(prompt);
+           */
 
 
             //Console.Clear();
@@ -49,8 +51,23 @@ namespace Spac3Game
 
 
         }
-        //Figure out how to user input choices          
-        private static void ChooseYourAdventure()
+
+        public static void ClosingMessage(QuitReason quitReason)
+        {
+            switch (quitReason)
+            {
+                case QuitReason.DontQuit:
+                    break;
+                case QuitReason.UserQuit:
+                    break;
+                case QuitReason.Age:
+                    break;
+                case QuitReason.OutOfMoney:
+                    break;
+            }
+
+            //Figure out how to user input choices          
+            private static void ChooseYourAdventure()
         {
             ConsoleKey choice, choice2;
             do
@@ -66,6 +83,10 @@ namespace Spac3Game
                         Console.WriteLine($"{PlayerOne} Do you want to try again?\nPress 3 for \"Yes\"\nPress 1 for \"No\"");
                         Console.WriteLine();
                         //need to loop back after this.
+                        break;
+                  
+                    case ConsoleKey.D2:
+                        Console.WriteLine($"Wise choice {PlayerOne}', Lets roll!");
                         break;
                 }
             }
@@ -92,23 +113,7 @@ namespace Spac3Game
             }
             while (choice != ConsoleKey.D1 && choice != ConsoleKey.D2 && choice2 != ConsoleKey.D3);
         }
+        }
+
     }
-
 }
-//{
-//    Console.WriteLine($"{PlayerOne} Do you want to try again?\n Press 3 for \"Yes\", press 1 for \"No\".");
-//    ConsoleKey choice2;
-//    do
-//    {
-//        choice2 = Console.ReadKey(true).Key;
-//        switch (choice2)
-//        {
-//            case ConsoleKey.D3:
-//                Console.WriteLine($"Ok {PlayerOne}, I'll ask again");
-//                break;
-//        }
-//    } while (choice != ConsoleKey.D1 && choice != ConsoleKey.D2 && choice2 != ConsoleKey.D3);
-//
-//}
-//while (choice != ConsoleKey.D3 && choice != ConsoleKey.D2) ;
-

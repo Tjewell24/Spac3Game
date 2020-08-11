@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Spac3Game
 {
-    //enum QuitReason { DontQuit, UserQuit, Age, OutOfMoney, WorkforDad };
+    enum QuitReason { DontQuit, UserQuit, Age, OutOfMoney };
 
     public class App
     {
@@ -12,7 +12,7 @@ namespace Spac3Game
             
         public App()
         {
-            planets = new Planets("Earth","","")
+            planets = new Planets("You are on Earth", "Everything is known... Your current goal is to get away from your dad.", "Dollar general");
 
         }
 
@@ -20,15 +20,16 @@ namespace Spac3Game
         {
             Story.Intro();
 
-            EventLoop();
+           var quitReason = EventLoop();
 
+            Story.ClosingMessage(quitReason);
         }
 
 
 
-        private void EventLoop()
+        private QuitReason EventLoop()
         {
-            bool quit = false;
+            var quitReason = QuitReason.DontQuit;
 
             do
             {
@@ -42,18 +43,16 @@ namespace Spac3Game
 
 
                 var key = UI.UserInput();
-                quit = HandleInput(key);
-
-
-            } while (!quit);
-        }
-        private bool HandleInput(ConsoleKey key)
+                quitReason = HandleInput(key);
+            } while (quitReason == QuitReason.DontQuit);
+        }    return quitReason;
+        private QuitReason HandleInput(ConsoleKey key)
         {
             switch (key)
             {
                 case ConsoleKey.Q:
-                    return true;
-            } return false;
+                    return QuitReason.UserQuit;
+            } return QuitReason.DontQuit;
             
             
 
