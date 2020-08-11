@@ -6,7 +6,7 @@
 
 internal enum Planets 
     {
-        Earth, AlphaProxima1, AlphaCentuariB, Titan, Arad
+        Earth, AlphaProxima1, AlphaProxima2, Titan, Arad
     };
     
     internal enum Stars
@@ -23,24 +23,6 @@ internal enum Planets
     {
         weapons, rations, spaceGas, Food, Ships, Moon, drugs, wallet
     }
-
-
-The story so far...
-You are {playerName}.  Your dad is the multigajillion credit air of the Intergallatic spaceWeapons department where spaceWar is the business, and business
-is good.  You have just graduated from spaceHarvardWarCollege and was set to inherit the company...But you never were the type to do as you were told.
-Even finishing spaceCollege was a stretchGoal.  Moral ambiguity aside, you decide to take your life savings from odd jobs completed while at spaceCollege
-and set out to carve out your own "Space" in space. You skipped out on your spaceGraduation to avoid your father. So, with 1000 spaceCredits, a full tank of 
-spaceGas, a halfPack of ciggs, its dark and you're wearing sunglasses, you hop into your beatup spacePinto and set out on your adventure.
-
-2. The quickest (and sometimes dangerous) way to fortune is through the spaceTrades.  Goods, products, and services.  If it's in the shop, you can buy,
-trade, or steal.  The path you choose is dependant on what you trade.  Or you could just drop everything change your mind and decide to work for your father.
-Your choice. 
-
-3. So, do you want to work for your dad, or do you want to set out on your spaceAdventure!.
-1 work for dad
-2 continue
-Choice 1 = Console.WriteLine($"You work for your dad, make millions but feel hollow and empty inside.  Game over.");
-Choice 2 = Console.WriteLine($"Wise choice.  {playerName}, LET THE ADVENTURE BEGIN!!");
 
 class/enums:  Planets(Star) w/ Distance from Earth
 Earth(Earth's Sun), Proximab (Proxima Centauri) 4.2, AlphaCentuariB (AlphaCentuari) 4.367, Titan (AlphaCentuari) 4.367, Arad (BernardStar) 5.978
@@ -114,4 +96,21 @@ static void Main(string[] args)
            
                 return false;
             }
+3. So, do you want to work for your dad, or do you want to set out on your spaceAdventure!.
+1 work for dad
+2 continue
+Choice 1 = Console.WriteLine($"You work for your dad, make millions but feel hollow and empty inside.  Game over.");
+Choice 2 = Console.WriteLine($"Wise choice.  {playerName}, LET THE ADVENTURE BEGIN!!");
+
+
+The story so far...
+You are {playerName}.  Your dad is the multigajillion credit air of the Intergallatic spaceWeapons department where spaceWar is the business, and business
+is good.  You have just graduated from spaceHarvardWarCollege and was set to inherit the company...But you never were the type to do as you were told.
+Even finishing spaceCollege was a stretchGoal.  Moral ambiguity aside, you decide to take your life savings from odd jobs completed while at spaceCollege
+and set out to carve out your own "Space" in space. You skipped out on your spaceGraduation to avoid your father. So, with 1000 spaceCredits, a full tank of 
+spaceGas, a halfPack of ciggs, its dark and you're wearing sunglasses, you hop into your beatup spacePinto and set out on your adventure.
+
+2. The quickest (and sometimes dangerous) way to fortune is through the spaceTrades.  Goods, products, and services.  If it's in the shop, you can buy,
+trade, or steal.  The path you choose is dependant on what you trade.  Or you could just drop everything change your mind and decide to work for your father.
+Your choice. 
 */

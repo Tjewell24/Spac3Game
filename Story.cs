@@ -28,17 +28,17 @@ namespace Spac3Game
             Console.WriteLine($"So, {PlayerOne}, do you want to work for \"dear 'ol dad\", or do you want to set out on your spaceAdventure!\nPress 1 Work for dad!\nPress 22 I do What I Want!");
             Console.WriteLine($"Choose your destiny! Press 1, or Press 22");
             ChooseYourAdventure();
-            
-           /*UI.UserInput(prompt);
 
-           Console.Clear();
-           Console.WriteLine($"Choice 1 = You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow anempty inside. Game over.");
-           UI.UserInput(prompt);
-           
-           Console.Clear();
-           Console.WriteLine($"Choice 2 = Wise choice 'playerName', LET THE ADVENTURE BEGIN!!");
-           UI.UserInput(prompt);
-           */
+            /*UI.UserInput(prompt);
+
+            Console.Clear();
+            Console.WriteLine($"Choice 1 = You work for your dad, make millions of spaceCredits.\nYour wallet is fat but feel hollow anempty inside. Game over.");
+            UI.UserInput(prompt);
+
+            Console.Clear();
+            Console.WriteLine($"Choice 2 = Wise choice 'playerName', LET THE ADVENTURE BEGIN!!");
+            UI.UserInput(prompt);
+            */
 
 
             //Console.Clear();
@@ -52,22 +52,27 @@ namespace Spac3Game
 
         }
 
+        //Figure out how to user input choices          
         public static void ClosingMessage(QuitReason quitReason)
         {
             switch (quitReason)
             {
-                case QuitReason.DontQuit:
-                    break;
+
                 case QuitReason.UserQuit:
+                    Console.WriteLine($"Goodbye {PlayerOne}..\n\n");
                     break;
                 case QuitReason.Age:
+                    Console.WriteLine($"Sorry {PlayerOne} You are too old to continue.. \n\n");
                     break;
                 case QuitReason.OutOfMoney:
+                    Console.WriteLine($"YOU BROKE {PlayerOne}... Get your money up Space Cowboy");
                     break;
-            }
+                case QuitReason.DontQuit:
+                    throw new NotImplementedException("Shouldn't be quitting with DontQuit");
 
-            //Figure out how to user input choices          
-            private static void ChooseYourAdventure()
+            }
+        }
+        public static void ChooseYourAdventure()
         {
             ConsoleKey choice, choice2;
             do
@@ -84,7 +89,7 @@ namespace Spac3Game
                         Console.WriteLine();
                         //need to loop back after this.
                         break;
-                  
+
                     case ConsoleKey.D2:
                         Console.WriteLine($"Wise choice {PlayerOne}', Lets roll!");
                         break;
@@ -113,7 +118,6 @@ namespace Spac3Game
             }
             while (choice != ConsoleKey.D1 && choice != ConsoleKey.D2 && choice2 != ConsoleKey.D3);
         }
-        }
-
     }
+
 }
