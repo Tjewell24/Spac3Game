@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 
 namespace Spac3Game
 {
@@ -7,12 +8,16 @@ namespace Spac3Game
 
     public class App
     {
-        Planets planets;
+        List<Planets> planets = new List<Planets>();
+
+        Planets currentPlanet;
 
             
         public App()
         {
-            planets = new Planets("You are on Earth", "Everything is known... Your current goal is to get away from your dad.", "Dollar general");
+            planets.Add(new Planets("Earth", "Everything is known... Your current goal is to get away from your dad.", "Dollar general", 0, 0));
+
+            currentPlanet = planets[0];
 
         }
 
@@ -36,33 +41,56 @@ namespace Spac3Game
                 Console.Clear();
 
                 //print current location
-                Console.WriteLine(planets.planetName);
+                Console.WriteLine($"You are on {currentPlanet.planetName}\n");
 
-                // print a discription of location
-                Console.WriteLine(planets.planetDescription);
+               // printed location description for user
+                Console.WriteLine(currentPlanet.planetDescription);
 
                 // provide options to the user things they can do
-                Console.WriteLine($"Your local store is {planets.planetStore}.. Spend wisely Cowboy");
+                PrintOptionList();
 
 
                 var key = UI.UserInput();
                 quitReason = HandleInput(key);
             } while (quitReason == QuitReason.DontQuit);
             return quitReason;
-        }    
-         private QuitReason HandleInput(ConsoleKey key)
+        }
+
+        private void PrintOptionList()
+        {
+            Console.WriteLine("CHOOSE WHAT YOU WANT TO DO\n");
+            Console.WriteLine("1. Travel to your next Planet\n");
+            Console.WriteLine("2. Go to your local Dollar General\n");
+            Console.WriteLine("3. Chill on Earth and do some cowboy stuff");
+        }
+
+        private QuitReason HandleInput(ConsoleKey key)
          {
             switch (key)
             {
                 case ConsoleKey.Q:
                     return QuitReason.UserQuit;
+                case ConsoleKey.D1:
+                    TravelOptions();
+                    break;
             } return QuitReason.DontQuit;
             
             
 
          }
 
+        private void TravelOptions()
+        {
+            Console.WriteLine("Travel to:");
+            for (int i = 0; i < planets.Count; ++i)
+            {
+                Planets destination = planets[i];
 
+                var distance = currentPlanet.DistanceTo(destination);
+
+                Console.WriteLine($"{i + 1}. {planets}: {distance}ly\n");
+            }
+        }
     }
 }
 
