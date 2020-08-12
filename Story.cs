@@ -10,13 +10,13 @@ namespace Spac3Game
         {
             string prompt = "Press any key continue...";
 
-            string playerOne;
+            
             //int spaceCredits = 1000;
             Console.WriteLine("What do I call you spaceCowboy?");
-            playerOne = Console.ReadLine();
+             string playerOne = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine($"The story so far...\nIn the year 23xx, You are {PlayerOne}. Your dad is the multigajillion-spaceCredit-air of the\nIntergallatic spaceWeapons department where spaceWar is the business, and business is good. You have just graduated from\nspaceHarvardWarCollege and was set to inherit the company...\nBut {PlayerOne} was never the type to do as you were told. Even finishing spaceCollege was a stretchGoal.\nMoral ambiguity aside, {PlayerOne} decides to take your life savings from odd jobs completed while at spaceCollege and set out to carve out your own \"Space\" in space. {PlayerOne} skipped out on your spaceGraduation to avoid your father.\nSo, with 1000 spaceCredits, a full tank of spaceGas, a halfPack of cigarettes, its dark and you're wearing sunglasses\nyou hop into your beatup spacePinto and set\nout to begin your adventure.");
+            Console.WriteLine($"The story so far...\nIn the year 23xx, You are {playerOne}. Your dad is the multigajillion-spaceCredit-air of the\nIntergallatic spaceWeapons department where spaceWar is the business, and business is good. You have just graduated from\nspaceHarvardWarCollege and was set to inherit the company...\nBut {PlayerOne} was never the type to do as you were told. Even finishing spaceCollege was a stretchGoal.\nMoral ambiguity aside, {PlayerOne} decides to take your life savings from odd jobs completed while at spaceCollege and set out to carve out your own \"Space\" in space. {PlayerOne} skipped out on your spaceGraduation to avoid your father.\nSo, with 1000 spaceCredits, a full tank of spaceGas, a halfPack of cigarettes, its dark and you're wearing sunglasses\nyou hop into your beatup spacePinto and set\nout to begin your adventure.");
 
             UI.UserInput(prompt);
 
@@ -25,7 +25,7 @@ namespace Spac3Game
             UI.UserInput(prompt);
 
             Console.Clear();
-            Console.WriteLine($"So, {PlayerOne}, do you want to work for \"dear 'ol dad\", or do you want to set out on your spaceAdventure!\nPress 1 Work for dad!\nPress 22 I do What I Want!");
+            Console.WriteLine($"So, {playerOne}, do you want to work for \"dear 'ol dad\", or do you want to set out on your spaceAdventure!\nPress 1 Work for dad!\nPress 22 I do What I Want!");
             Console.WriteLine($"Choose your destiny! Press 1, or Press 22");
             ChooseYourAdventure();
 
@@ -57,15 +57,15 @@ namespace Spac3Game
         {
             switch (quitReason)
             {
-
+                
                 case QuitReason.UserQuit:
-                    Console.WriteLine($"Goodbye {PlayerOne}..\n\n");
+                    Console.WriteLine($"Goodbye  ..\n\n");
                     break;
                 case QuitReason.Age:
-                    Console.WriteLine($"Sorry {PlayerOne} You are too old to continue.. \n\n");
+                    Console.WriteLine($"Sorry  You are too old to continue.. \n\n");
                     break;
                 case QuitReason.OutOfMoney:
-                    Console.WriteLine($"YOU BROKE {PlayerOne}... Get your money up Space Cowboy");
+                    Console.WriteLine($"YOU BROKE ... Get your money up Space Cowboy");
                     break;
                 case QuitReason.DontQuit:
                     throw new NotImplementedException("Shouldn't be quitting with DontQuit");

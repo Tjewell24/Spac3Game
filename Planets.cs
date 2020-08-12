@@ -43,7 +43,7 @@ namespace Spac3Game
         //Bernard Star / Arad:(3.6, 5.978)
         //Planet general description: Earth is earth.  Tech advanced planet colonizing society)
         //Titan: "Brother" planet in the Centuari system. Planet though larger than Earth is mostly water. 
-        //Alpha Proxima 1 and 2. "Sister" planets in the Centauri system. Share a near identical orbit around Alpha Cent. Tropical Climate nearly all year round due to uniquely strong ozone layer.
+        //Alpha Proxima 1 and Alpha Proxima 2. "Sister" planets aka "Twins" in the Centauri system as they share a near identical orbit around Alpha Cent. Tropical Climate nearly all year round due to uniquely strong ozone layer.
         //Arad: Desert planet in far reaches of known colonized space. Money is law here. 
     }
 }
