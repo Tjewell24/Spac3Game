@@ -39,7 +39,7 @@ namespace Spac3Game
 
         //Star / Planet coords: Sun / Earth (0 , 0)
         //Proxima Cent / Titan: (-3.3 , 4.2)
-        //Alpha Cent / Alpha Proxima 1,2: (-2.5 , 4.367)
+        //Alpha Cent / Alpha Proxima 1,2. Alpha Proxima 2 is a little further out (wider orbit) than AP1, so y axis will be > AP10.0: (-2.5 , 4.367)
         //Bernard Star / Arad:(3.6, 5.978)
         //Planet general description: Earth is earth.  Tech advanced planet colonizing society)
         //Titan: "Brother" planet in the Centuari system. Planet though larger than Earth is mostly water. 

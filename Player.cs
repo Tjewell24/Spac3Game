@@ -1,35 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Spac3Game
 {
-
-    public class playerOne
+    public class Player
     {
+       public Planets planets;
+        public double age = 20;
+            
+        public Player(Planets planet)
+        {
+            this.planets = planets;
+        }
 
+        public void TravelTo(Planets destination)
+        {
+            this.planets = destination;
+        }
     }
 }
-
-  
-//     public double age = 20;
-//
-//     public Location location;
-//
-//
-//     public playerOne(Location location)
-//     {
-//         this.location = location;
-//     }
-//
-//     public void TravelTo(Location destination, double warpSpeed)
-//     {
-//         var distance = location.DistanceTo(destination);
-//         var speedInLightSpeed = Utility.WarpSpeedToLightSpeed
-//
-//
-//         location = destination;    
-//
-//     

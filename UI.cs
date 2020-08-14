@@ -28,6 +28,11 @@ namespace Spac3Game
         {
             Console.ResetColor();
         }
-       
+
+        internal static void ResetColor()
+        {
+
+            Console.ResetColor();
+        }
     }
 }
